@@ -1,177 +1,188 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NVS-Adapter: Plug-and-Play Novel View Synthesis from a Single Image</title>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800' rel='stylesheet' type='text/css'>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NVS-Adapter: Plug-and-Play Novel View Synthesis from a Single Image</title>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/project.css" media="screen" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/iconize.css" />
     <script src="js/google-code-prettify/prettify.js"></script> -->
-  </head>
+</head>
 
-  <!-- cover -->
-  <section>
-    <div class="jumbotron text-center mt-0">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h2>NVS-Adapter: <br> Plug-and-Play Novel View Synthesis from a Single Image
-            </h2>
-            <h4 style="color:#5a6268;">Arxiv 2023 </h4>
-            <hr>
-            <h6>
-                <a href="https://yoonwooinfo.notion.site" target="_blank">Yoonwoo Jeong</a><sup>*,1,2</sup>,
-                <a href="" target="_blank">Jinwoo Lee</a><sup>*,2</sup>,
-                <a href="https://scholar.google.com/citations?user=nimFSSEAAAAJ" target="_blank">Chiheon Kim</a><sup>2</sup>,
-                <a href="https://cvlab.postech.ac.kr/~mcho/" target="_blank">Minsu Cho</a><sup>1</sup>,
-                <a href="https://scholar.google.co.kr/citations?user=5rAj44kAAAAJ" target="_blank">Doyup Lee</a><sup>2</sup></h6>
-            <p>
-                <sup>*</sup>Equal Contriubtion &nbsp;&nbsp;<br>
-                <sup>1</sup>POSTECH &nbsp;&nbsp;
-                <sup>2</sup>Kakaobrain&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
+<!-- cover -->
+<section>
+  <div class="jumbotron text-center mt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2>NVS-Adapter: <br> Plug-and-Play Novel View Synthesis from a Single Image
+          </h2>
+          <h4 style="color:#5a6268;">Arxiv 2023 </h4>
+          <hr>
+          <h6>
+            <a href="https://yoonwooinfo.notion.site" target="_blank">Yoonwoo Jeong</a><sup>*,1,2</sup>,
+            <a href="" target="_blank">Jinwoo Lee</a><sup>*,2</sup>,
+            <a href="https://scholar.google.com/citations?user=nimFSSEAAAAJ" target="_blank">Chiheon
+              Kim</a><sup>2</sup>,
+            <a href="https://cvlab.postech.ac.kr/~mcho/" target="_blank">Minsu Cho</a><sup>1</sup>,
+            <a href="https://scholar.google.co.kr/citations?user=5rAj44kAAAAJ" target="_blank">Doyup Lee</a><sup>2</sup>
+          </h6>
+          <p>
+            <sup>*</sup>Equal Contriubtion &nbsp;&nbsp;<br>
+            <sup>1</sup>POSTECH &nbsp;&nbsp;
+            <sup>2</sup>Kakaobrain&nbsp;&nbsp;&nbsp;&nbsp;
+          </p>
 
-            <div class="row justify-content-center">
-              <div class="column">
-                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://arxiv.org/abs/2312.07315" role="button"  target="_blank">
-                    <i class="fa fa-file"></i> Paper</a> </p>
-              </div>
-              <!-- <div class="column">
-                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/liuyuan-pal/SyncDreamer" role="button"  target="_blank">
-                    <i class="fa fa-github-alt"></i> Code </a> </p>
-              </div>
-              <div class="column">
-                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://connecthkuhk-my.sharepoint.com/:f:/g/personal/yuanly_connect_hku_hk/EjYHbCBnV-VPjBqNHdNulIABq9sYAEpSz4NPLDI72a85vw" role="button"  target="_blank">
-                    <i class="fa fa-database"></i> Model </a> </p>
-              </div> -->
+          <div class="row justify-content-center">
+            <div class="column">
+              <p class="mb-5"><a class="btn btn-large btn-light" href="https://arxiv.org/abs/2312.07315" role="button"
+                  target="_blank">
+                  <i class="fa fa-file"></i> Paper</a> </p>
+            </div>
+            <div class="column">
+              <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/kakaobrain/nvs-adapter"
+                  role="button" target="_blank">
+                  <i class="fa fa-github-alt"></i> Code </a> </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
-  <!-- abstract -->
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h3>TL;DR</h3>
-
-          <p class="text-center">
-            Our NVS-Adapter is capable of generating novel views from a reference image while preserving the generation capacity of the pretrained T2I model.
-          </p>
-
-            <hr style="margin-top:0px">
-              <img src="images/teaser.png" width="600" height="600">
-              <br>
-
-          <br>
-          <h3>Abstract</h3>
-
-          <p class="text-left">
-            Transfer learning of large-scale Text-to-Image (T2I) models has recently shown impressive potential for Novel View Synthesis (NVS) of diverse objects from a single image. While previous methods typically train large models on multi-view datasets for NVS, fine-tuning the whole parameters of T2I models not only demands a high cost but also reduces the generalization capacity of T2I models in generating diverse images in a new domain. In this study, we propose an effective method, dubbed NVS-Adapter, which is a plug-and-play module for a T2I model, to synthesize novel multi-views of visual objects while fully exploiting the generalization capacity of T2I models. NVS-Adapter consists of two main components; view-consistency cross-attention learns the visual correspondences to align the local details of view features, and global semantic conditioning aligns the semantic structure of generated views with the reference view. Experimental results demonstrate that the NVS-Adapter can effectively synthesize geometrically consistent multi-views and also achieve high performance on benchmarks without full fine-tuning of T2I models.
-          </p>
-
-          
-          <img src="images/main_framework.png" width="1000">
-          <br>
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <br>
-
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-            <h2>Novel View Synthesis Examples</h2>
-            <hr style="margin-top:0px">
-            <img src="images/qual.png" width="1000">
-            <br>
-          <p class="text-left">
-            
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <br>
-
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-            <h2>Results on the images generated by SD </h2>
-            <hr style="margin-top:0px">
-            <img src="images/textprompt_1.png" width="800">
-            <img src="images/textprompt_2.png" width="800">
-            <br>
-          <p class="text-left">
-            
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <br>
-
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-            <h2>Image to 3D Model with Score Distillation Sampling</h2>
-            <hr style="margin-top:0px">
-            <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
-                <source src="video/sds_image.mp4" type="video/mp4">
-            </video>
-
-          <p class="text-left">
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <br>
-
-
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-            <h2>Text to Image to 3D Model with Score Distillation Sampling</h2>
-            <hr style="margin-top:0px">
-            <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
-                <source src="video/sds_text.mp4" type="video/mp4">
-            </video>
-
-          <p class="text-left">
-
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <br>
-
-
-
-  <!-- citing -->
+<!-- abstract -->
+<section>
   <div class="container">
-    <div class="row ">
-      <div class="col-12">
-          <h3>Citation</h3>
-          <hr style="margin-top:0px">
-              <pre style="background-color: #e9eeef;padding: 1.25em 1.5em">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3>TL;DR</h3>
+
+        <p class="text-center">
+          Our NVS-Adapter is capable of generating novel views from a reference image while preserving the generation
+          capacity of the pretrained T2I model.
+        </p>
+
+        <hr style="margin-top:0px">
+        <img src="images/teaser.png" width="600" height="600">
+        <br>
+
+        <br>
+        <h3>Abstract</h3>
+
+        <p class="text-left">
+          Transfer learning of large-scale Text-to-Image (T2I) models has recently shown impressive potential for Novel
+          View Synthesis (NVS) of diverse objects from a single image. While previous methods typically train large
+          models on multi-view datasets for NVS, fine-tuning the whole parameters of T2I models not only demands a high
+          cost but also reduces the generalization capacity of T2I models in generating diverse images in a new domain.
+          In this study, we propose an effective method, dubbed NVS-Adapter, which is a plug-and-play module for a T2I
+          model, to synthesize novel multi-views of visual objects while fully exploiting the generalization capacity of
+          T2I models. NVS-Adapter consists of two main components; view-consistency cross-attention learns the visual
+          correspondences to align the local details of view features, and global semantic conditioning aligns the
+          semantic structure of generated views with the reference view. Experimental results demonstrate that the
+          NVS-Adapter can effectively synthesize geometrically consistent multi-views and also achieve high performance
+          on benchmarks without full fine-tuning of T2I models.
+        </p>
+
+
+        <img src="images/main_framework.png" width="1000">
+        <br>
+
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2>Novel View Synthesis Examples</h2>
+        <hr style="margin-top:0px">
+        <img src="images/qual.png" width="1000">
+        <br>
+        <p class="text-left">
+
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2>Results on the images generated by SD </h2>
+        <hr style="margin-top:0px">
+        <img src="images/textprompt_1.png" width="800">
+        <img src="images/textprompt_2.png" width="800">
+        <br>
+        <p class="text-left">
+
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2>Image to 3D Model with Score Distillation Sampling</h2>
+        <hr style="margin-top:0px">
+        <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+          <source src="video/sds_image.mp4" type="video/mp4">
+        </video>
+
+        <p class="text-left">
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2>Text to Image to 3D Model with Score Distillation Sampling</h2>
+        <hr style="margin-top:0px">
+        <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+          <source src="video/sds_text.mp4" type="video/mp4">
+        </video>
+
+        <p class="text-left">
+
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+
+
+
+<!-- citing -->
+<div class="container">
+  <div class="row ">
+    <div class="col-12">
+      <h3>Citation</h3>
+      <hr style="margin-top:0px">
+      <pre style="background-color: #e9eeef;padding: 1.25em 1.5em">
 <code>@article{jeong2023nvsadapter,
     title={NVS-Adapter: Plug-and-Play Novel View Synthesis from a Single Image},
     author={Yoonwoo Jeong, Jinwoo Lee, Chiheon Kim, Minsu Cho, and Doyup Lee},
@@ -179,14 +190,15 @@
     year={2023}
 }</code>
               </pre>
-          <hr>
-      </div>
+      <hr>
     </div>
   </div>
+</div>
 
-  <footer class="text-center" style="margin-bottom:10px">
-      Thanks to <a href="https://lioryariv.github.io/" target="_blank">Lior Yariv</a> for the website template.
-  </footer>
+<footer class="text-center" style="margin-bottom:10px">
+  Thanks to <a href="https://lioryariv.github.io/" target="_blank">Lior Yariv</a> for the website template.
+</footer>
 
 </body>
+
 </html>
